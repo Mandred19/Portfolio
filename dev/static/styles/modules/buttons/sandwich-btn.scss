@@ -1,0 +1,46 @@
+.sandwich-btn{
+	background-color: $white;
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	height: 5px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+	transition: all linear .4s;
+	width: 30px;
+	&::before, &::after{
+		border-radius: inherit;
+		background-color: inherit;
+		content:"";
+		height: inherit;
+		position: absolute;
+		margin: auto;
+		transition: all linear .4s;
+		width: 50%;
+	}
+	&::before{
+		left: 0;
+		top: -12px;
+		transform-origin: left;
+	}
+	&::after{
+		bottom:-12px;
+		right: 0;
+		transform-origin: right;
+	}
+}
+
+.open{
+	background-color: $action-color;
+	transform:translate(-50%, -50%) rotate(135deg);
+	&::before{
+		top:0;
+		transform: translateX(100%) rotate(-90deg);
+	}
+	&::after{
+		bottom:0;
+		transform: translateX(-100%) rotate(-90deg);
+	}
+}

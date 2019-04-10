@@ -76,27 +76,28 @@ button { outline: none; }
 	@media screen and(max-width: $desktop) {
 		padding: 0 10px;
 	}
+
+	&--header-main {
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		position: relative;
+		width: 768px;
+	}
 }
 
 .title {
-	&--dark {
-		color: $base-text;
-	}
-	&--white {
-		color: $white;
-	}
-	&--bold {
-		font-family: $bold-font;
-		font-size: 1.5rem;
-	}
-}
+	color: $base-text;
+	font-size: 1.7rem;
+	font-family: $bold-font;
 
-.text {
-	&--dark {
-		color: $base-text;
-	}
-	&--white {
+	&--name {
 		color: $white;
+		font-size: 5rem;
+	}
+	&--prof {
+		color: $white;
+		font-size: 3.5rem;
 	}
 }
 

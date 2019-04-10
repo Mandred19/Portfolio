@@ -1,0 +1,31 @@
+header.header
+
+	header.header-top
+		.container
+			.header-top__logo
+				+icon("logo111", "logo-icon")
+			nav.header-top__menu
+				ul.header-top__list
+					li.header-top__item
+						a.header-top__link.js-anchor(href="#main") Main
+					li.header-top__item
+						a.header-top__link.js-anchor(href="#about") About me
+					li.header-top__item
+						a.header-top__link.js-anchor(href="#portfolio") Portfolio
+					li.header-top__item
+						a.header-top__link.js-anchor(href="#skills") My skills
+					li.header-top__item.header-top__item--lang
+						+icon("lang", "lang-item")
+						span.header-top__lang.lang-active En
+						span.header-top__lang Ru
+			.header-top__sandwich
+				button.sandwich-btn
+
+	header.header-main(style="background-image:url('static/images/general/coding.jpg')")
+		.container.container--header-main
+			h2.title.header-main__title.header-main__title--one.revealator-slideright.revealator-once.revealator-delay3.revealator-duration10.title--name Alexander
+			h2.title.header-main__title.header-main__title--two.revealator-slideright.revealator-once.revealator-delay5.revealator-duration10.title--name Alexeev
+			h3.title.header-main__title.header-main__title--three.revealator-slideright.revealator-once.revealator-delay7.revealator-duration10.title--prof Frontend
+			h3.title.header-main__title.header-main__title--four.revealator-slideright.revealator-once.revealator-delay8.revealator-duration10.title--prof Developer
+		buton.header-main__btn
+			+icon("nextscreen", "btn-next-screen")

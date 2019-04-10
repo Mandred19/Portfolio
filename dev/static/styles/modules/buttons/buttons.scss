@@ -1,7 +1,21 @@
+@import "sandwich-btn";
+
 .btn {
 	align-items: center;
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
 	transition: all linear .3s;
+}
+
+.btn-next-screen {
+	cursor: pointer;
+	@include size (45px);
+	fill: $white;
+	transition: all linear .3s;
+	@media screen and(min-width: 1023.98px) {
+		&:hover {
+			fill: $action-color;
+		}
+	}
 }
