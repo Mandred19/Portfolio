@@ -1,4 +1,5 @@
 .header {
+	margin-bottom: 40px;
 
 	&-top {
 		align-items: center;
@@ -25,9 +26,11 @@
 			border-radius: 5px;
 			display: flex;
 			height: 60px;
+			position: relative;
 			margin-right: 10px;
 			max-width: 800px;
 			width: 50vw;
+			z-index: 10;
 			@media screen and(max-width: $tablet-wide) {
 				width: 60vw;
 			}
@@ -44,6 +47,7 @@
 		}
 
 		&__item {
+			text-transform: uppercase;
 
 			&--lang {
 				align-items: center;

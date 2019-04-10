@@ -84,10 +84,16 @@ button { outline: none; }
 		position: relative;
 		width: 768px;
 	}
+
+	&--about {
+		align-items: flex-start;
+		// @media screen and(max-width: $desktop) {
+		// 	flex-direction: column;
+		// }
+	}
 }
 
 .title {
-	color: $base-text;
 	font-size: 1.7rem;
 	font-family: $bold-font;
 
@@ -99,6 +105,11 @@ button { outline: none; }
 		color: $white;
 		font-size: 3.5rem;
 	}
+}
+
+.text {
+	line-height: 1.7;
+	letter-spacing: 0.1px;
 }
 
 //Модули
