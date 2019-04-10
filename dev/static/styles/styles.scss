@@ -1,0 +1,104 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: $bg;
+	color: $base-text;
+	font-size: $base-font-size;
+	font-family: $main-font;
+	font-weight: $base-font-weight;
+	height: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+ul, li {
+	list-style-type: none;
+	outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $link;
+	outline: none;
+	transition: all linear .3s;
+	@media screen and(min-width: 1023.98px) {
+		&:hover {
+			color: $action-color;
+		}
+	}
+}
+
+p { margin: 0; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { position: relative; }
+
+input,
+select,
+option,
+button { outline: none; }
+
+*, *:before, *:after { box-sizing: border-box; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content { flex: 1 0 auto; }
+
+.container {
+	align-items: center;
+	display: flex;
+  margin: 0 auto;
+	max-width: $content-size;
+	width: 100%;
+	@media screen and(max-width: $desktop) {
+		padding: 0 10px;
+	}
+}
+
+.title {
+	&--dark {
+		color: $base-text;
+	}
+	&--white {
+		color: $white;
+	}
+	&--bold {
+		font-family: $bold-font;
+		font-size: 1.5rem;
+	}
+}
+
+.text {
+	&--dark {
+		color: $base-text;
+	}
+	&--white {
+		color: $white;
+	}
+}
+
+//Модули
+@import "modules/modules";
