@@ -1,0 +1,29 @@
+.skill {
+	margin-bottom: 60px;
+
+	&-block {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+}
+
+.skills {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 20px;
+	width: 60%;
+	& > * {
+		margin: 10px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+.skill-resume {
+	display: flex;
+	width: 40%;
+}

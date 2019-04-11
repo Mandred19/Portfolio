@@ -19,3 +19,14 @@
 		}
 	}
 }
+
+.slider-block__btn {
+	background-color: $action-color;
+	border-radius: 0 0 5px 5px;
+	color: $white;
+	font-size: 1.2rem;
+	font-family: $medium-font;
+	height: 50px;
+	position: relative;
+	width: 100%;
+}

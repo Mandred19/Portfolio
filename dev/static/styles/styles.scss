@@ -30,12 +30,6 @@ a {
 	text-decoration: none;
 	color: $link;
 	outline: none;
-	transition: all linear .3s;
-	@media screen and(min-width: 1023.98px) {
-		&:hover {
-			color: $action-color;
-		}
-	}
 }
 
 p { margin: 0; }
@@ -55,7 +49,10 @@ section { position: relative; }
 input,
 select,
 option,
-button { outline: none; }
+button {
+	outline: none;
+	border: none;
+}
 
 *, *:before, *:after { box-sizing: border-box; }
 
@@ -96,6 +93,10 @@ button { outline: none; }
 		align-items: flex-start;
 		flex-direction: column;
 		position: relative;
+	}
+
+	&--skill {
+		justify-content: space-between;
 	}
 }
 

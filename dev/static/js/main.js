@@ -58,13 +58,36 @@ $(document).ready(function () {
 		});
 	};
 
+	const animProgressBar = (time) => {
+		let check = 1,
+				bar = document.querySelectorAll('.skill-block__progress'),
+				start = 0,
+				target = $('.skills'),
+				targetPos = target.offset().top,
+				winHeight = $(window).height(),
+				scrollToElem = targetPos - winHeight;
+
+		$(window).scroll( () => {
+			let winScrollTop = $(this).scrollTop();
+			if (winScrollTop > scrollToElem && check) {
+				bar.forEach((i, ind) => {
+					const interval = setInterval(() => {
+						start > bar[ind].max ? clearInterval(interval) : bar[ind].value = start;
+						start++;
+					}, time);
+				});
+				check = 0;
+			}
+		});
+	};
+
 
 	portfSlider();
 	setAnchors();
+	animProgressBar(50);
 });
 
 
 window.addEventListener('DOMContentLoaded', () => {
-
 
 });
