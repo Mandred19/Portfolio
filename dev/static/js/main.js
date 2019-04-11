@@ -9,44 +9,41 @@ $(document).ready(function () {
 
 
 	const portfSlider = () => {
-		$('.js-pizza-slider').slick({
+		$('.slider').slick({
 			arrows: true,
 			dots: true,
 			infinite: true,
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			nextArrow: '.pizza-main__arrow__prev',
-			prevArrow: '.pizza-main__arrow__next',
+			nextArrow: '.slider-arrow__next',
+			prevArrow: '.slider-arrow__prev',
 			responsive: [
 				{
 					breakpoint: 1025,
 					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
+						arrows: false,
+						slidesToShow: 3
 					}
 				},
 				{
 					breakpoint: 769,
 					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1
+						slidesToShow: 2
 					}
 				},
 				{
-					breakpoint: 481,
+					breakpoint: 561,
 					settings: {
-						arrows: false,
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				},
-				{
-					breakpoint: 321,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
+						slidesToShow: 1
 					}
 				}
+				// {
+				// 	breakpoint: 321,
+				// 	settings: {
+				// 		slidesToShow: 1,
+				// 		slidesToScroll: 1
+				// 	}
+				// }
 			]
 		});
 	};

@@ -91,6 +91,12 @@ button { outline: none; }
 		// 	flex-direction: column;
 		// }
 	}
+
+	&--portfolio {
+		align-items: flex-start;
+		flex-direction: column;
+		position: relative;
+	}
 }
 
 .title {

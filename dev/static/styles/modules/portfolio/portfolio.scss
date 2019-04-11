@@ -1,0 +1,67 @@
+.portfolio {
+
+
+}
+
+.slider {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	&-block {
+		align-items: center;
+		border-radius: 5px;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 265px;
+		overflow: hidden;
+		position: relative;
+		margin: 0 10px;
+		transition: all linear .3s;
+		&:hover {
+			.slider-block__overlay {
+				align-items: center;
+				background-color: rgba($hover-dark, .7);
+				bottom: 50px;
+				display: flex;
+				justify-content: center;
+				left: 0;
+				overflow: hidden;
+				right: 0;
+				position: absolute;
+				top: 0;
+				z-index: 1;
+			}
+			.slider-block__btn {
+				background-color: $action-color;
+				border-radius: 0 0 5px 5px;
+				color: $white;
+				font-size: 1.2rem;
+				font-family: $medium-font;
+				height: 50px;
+				position: relative;
+				margin: 0 auto;
+				width: 100%;
+				z-index: 2;
+			}
+		}
+
+		&__image {
+			height: auto;
+			width: 100%;
+		}
+
+		&__title {
+			color: $white;
+			font-size: 1.7rem;
+			font-family: $bold-font;
+			height: 62px;
+			overflow: hidden;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+	}
+}
