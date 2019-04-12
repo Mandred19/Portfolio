@@ -1,4 +1,4 @@
-$(window).on('load', function () {
+$(window).on('load', () => {
   setTimeout( () => {
 		$(".s-preloader").delay(100).fadeOut().remove();
   }, 0);
@@ -90,4 +90,77 @@ $(document).ready(function () {
 
 window.addEventListener('DOMContentLoaded', () => {
 
+
+	const sandwichBtn = () => {
+		let btnWrap = document.querySelector('.header-top__sandwich'),
+				btn = document.querySelector('.sandwich-btn'),
+				nav = document.querySelector('.header-top__menu'),
+				body = document.querySelector('body');
+		btnWrap.addEventListener('click', (event) => {
+			let target = event.target || event.target.closest('.sandwich-btn');
+			if (target) {
+				btnWrap.classList.toggle('sandWrap-open');
+				btn.classList.toggle('sand-open');
+				nav.classList.toggle('menu-open');
+				// body.classList.toggle('magnific-popup-no-scroll');
+			}
+		});
+		// btnWrap.addEventListener('mouseover', (event) => {
+		// 	console.log(1);
+		// 	let target = event.target || event.target.closest('.sandwich-btn');
+		// 	if (target && ! btn.classList.contains('.sandWrap-open')) {
+		// 		btn.classList.toggle('sand-hover');
+		// 	}
+		// });
+		// btnWrap.addEventListener('mouseout', (event) => {
+		// 	console.log(1);
+		// 	let target = event.target || event.target.closest('.sandwich-btn');
+		// 	if (target && ! btn.classList.contains('.sandWrap-open')) {
+		// 		btn.classList.toggle('sand-hover');
+		// 	}
+		// });
+
+		nav.addEventListener('click', (event) => {
+			let target = event.target && event.target.closest('.header-top__item');
+			if (target) {
+				btnWrap.classList.toggle('sandWrap-open');
+				btn.classList.toggle('sand-open');
+				nav.classList.toggle('menu-open');
+				// body.classList.toggle('magnific-popup-no-scroll');
+			}
+		});
+	};
+
+	const nextScreen = () => {
+		let btn = document.querySelector('.header-main__btn'),
+				screenHeight = document.querySelector('.about').clientHeight;
+		btn.addEventListener('click', () => {
+			scrollBy({
+				top: screenHeight,
+				behavior: 'smooth'
+			});
+		});
+	};
+
+	const btnScrollUp = () => {
+		let scrollHeigth = 500,
+				scrollTopDuration = 600,
+				buttonUp = $('.button__scroll_up');
+		$(window).scroll( () => {
+			$(this).scrollTop() > scrollHeigth ?
+			buttonUp.addClass('button__scroll_up-active') :
+			buttonUp.removeClass('button__scroll_up-active');
+		});
+		buttonUp.on('click', (event) => {
+			event.preventDefault();
+			$('body, html').animate( {
+				scrollTop: 0
+			}, scrollTopDuration );
+		});
+	};
+
+
+	sandwichBtn();
+	nextScreen();
+	btnScrollUp();
 });

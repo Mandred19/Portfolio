@@ -1,4 +1,4 @@
-.sandwich-btn{
+.sandwich-btn {
 	background-color: $white;
 	border-radius: 5px;
 	cursor: pointer;
@@ -10,7 +10,7 @@
 	transform: translate(-50%, -50%) rotate(0deg);
 	transition: all linear .4s;
 	width: 30px;
-	&::before, &::after{
+	&::before, &::after {
 		border-radius: inherit;
 		background-color: inherit;
 		content:"";
@@ -20,27 +20,42 @@
 		transition: all linear .4s;
 		width: 50%;
 	}
-	&::before{
+	&::before {
 		left: 0;
 		top: -12px;
 		transform-origin: left;
 	}
-	&::after{
-		bottom:-12px;
+	&::after {
+		bottom: -12px;
 		right: 0;
 		transform-origin: right;
 	}
 }
 
-.open{
+.sandWrap-open {
+	border-radius: 0 5px 5px 0 !important;
+}
+
+.sand-open {
 	background-color: $action-color;
-	transform:translate(-50%, -50%) rotate(135deg);
-	&::before{
+	transform: translate(-50%, -50%) rotate(135deg);
+	&::before {
 		top:0;
 		transform: translateX(100%) rotate(-90deg);
 	}
-	&::after{
-		bottom:0;
+	&::after {
+		bottom: 0;
 		transform: translateX(-100%) rotate(-90deg);
 	}
 }
+
+// @media screen and(min-width: 1023.98px) {
+// 	.header-top__sandwich:hover, .sandwich-btn:hover {
+// 		.sandwich-btn::before {
+// 			top: 0px;
+// 		}
+// 		.sandwich-btn::after {
+// 			bottom: 0px;
+// 		}
+// 	}
+// }

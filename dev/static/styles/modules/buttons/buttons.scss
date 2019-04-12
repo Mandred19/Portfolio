@@ -28,5 +28,22 @@
 	font-family: $medium-font;
 	height: 50px;
 	position: relative;
+	padding: 0;
 	width: 100%;
+}
+
+.btn-scroll-top {
+	@include size (40px);
+	bottom: 1.85rem;
+	cursor: pointer;
+	fill: rgba($accent-color, .5);
+	position: fixed;
+	right: 1rem;
+	transition: all linear .3s;
+	z-index: 10;
+	@media screen and(min-width: 1023.98px) {
+		&:hover {
+			fill: $action-color;
+		}
+	}
 }

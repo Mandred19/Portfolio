@@ -1,43 +1,22 @@
+mixin slider-set(link, photoSrc, photoAlt, title, btnName)
+	.slider-block
+		a(href=link target="blank")
+			img.slider-block__image(src=photoSrc, alt=photoAlt)
+			.slider-block__overlay
+				h4.slider-block__title=title
+				button.btn.slider-block__btn=btnName
+
+
 section.portfolio#portfolio
 	.container.container--portfolio
-		h3.title.block-history__title Portfolio
+		h3.title.block-history__title My portfolio
 		section.slider
-			.slider-block
-				a(href="https://mandred19.github.io/RBNC/" target="blank")
-					img.slider-block__image(src="static/images/content/rnbc.jpg", alt="preview")
-					.slider-block__overlay
-						h4.slider-block__title Russian Business Negotiation Center
-						button.btn.slider-block__btn Show
-			.slider-block
-				a(href="https://mandred19.github.io/Yoga-tours/" target="blank")
-					img.slider-block__image(src="static/images/content/yoga.jpg", alt="preview")
-					.slider-block__overlay
-						h4.slider-block__title Yoga tours to India
-						button.btn.slider-block__btn Show
-			.slider-block
-				a(href="https://mandred19.github.io/Pizza-at-home/" target="blank")
-					img.slider-block__image(src="static/images/content/pizza.jpg", alt="preview")
-					.slider-block__overlay
-						h4.slider-block__title Pizza at home
-						button.btn.slider-block__btn Show
-			.slider-block
-				a(href="https://mandred19.github.io/Landing1/" target="blank")
-					img.slider-block__image(src="static/images/content/land.jpg", alt="preview")
-					.slider-block__overlay
-						h4.slider-block__title Landing
-						button.btn.slider-block__btn Show
-			.slider-block
-				a(href="https://mandred19.github.io/Money-keeper/" target="blank")
-					img.slider-block__image(src="static/images/content/budget.jpg", alt="preview")
-					.slider-block__overlay
-						h4.slider-block__title Money keeper
-						button.btn.slider-block__btn Show
-			.slider-block
-				a(href="https://mandred19.github.io/Mercury/" target="blank")
-					img.slider-block__image(src="static/images/content/merc.jpg", alt="preview")
-					.slider-block__overlay
-						h4.slider-block__title Mercury
-						button.btn.slider-block__btn Show
+			+slider-set("https://mandred19.github.io/RBNC/", "static/images/content/rnbc.jpg", "preview", "Russian Business Negotiation Center", "Show")
+			+slider-set("https://mandred19.github.io/Yoga-tours/", "static/images/content/yoga.jpg", "preview", "Yoga tours to India", "Show")
+			+slider-set("https://mandred19.github.io/Pizza-at-home/", "static/images/content/pizza.jpg", "preview", "Pizza at home", "Show")
+			+slider-set("https://mandred19.github.io/Landing1/", "static/images/content/land.jpg", "preview", "Landing", "Show")
+			+slider-set("https://mandred19.github.io/Money-keeper/", "static/images/content/budget.jpg", "preview", "Money keeper", "Show")
+			+slider-set("https://mandred19.github.io/Mercury/", "static/images/content/merc.jpg", "preview", "Mercury", "Show")
 
 		.slider-arrow
 			+icon("next", "slider-arrow__prev")

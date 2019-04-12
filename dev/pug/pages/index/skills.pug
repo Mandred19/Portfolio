@@ -1,41 +1,27 @@
+mixin skill-block-set(nameIcon, nameTeh, maxVal)
+	.skill-block
+		+icon(nameIcon, "skill-block__icon")
+		.skill-block__desc
+			p.skill-block__name=nameTeh
+			progress.skill-block__progress(value="0" max=maxVal)
+			.skill-block__progress-bg
+				.skill-block__progress-value
+
+
 section.skill#skill
 	.container.container--skill
 		section.skills
 			h3.title.block-history__title My skills
-			.skill-block
-				p.skill-block__name HTML5 + PUG
-				progress.skill-block__progress(value="0" max="85")
-				.skill-block__progress-bg
-					.skill-block__progress-value
-			.skill-block
-				p.skill-block__name CSS3 + SCSS
-				progress.skill-block__progress(value="0" max="80")
-				.skill-block__progress-bg
-					.skill-block__progress-value
-			.skill-block
-				p.skill-block__name JavaScript + JQuery
-				progress.skill-block__progress(value="0" max="50")
-				.skill-block__progress-bg
-					.skill-block__progress-value
-			.skill-block
-				p.skill-block__name Adaptability + Cross-browser compatibility
-				progress.skill-block__progress(value="0" max="70")
-				.skill-block__progress-bg
-					.skill-block__progress-value
-			.skill-block
-				p.skill-block__name Git
-				progress.skill-block__progress(value="0" max="40")
-				.skill-block__progress-bg
-					.skill-block__progress-value
-			.skill-block
-				p.skill-block__name PHP + Wordpress
-				progress.skill-block__progress(value="0" max="20")
-				.skill-block__progress-bg
-					.skill-block__progress-value
-			.skill-block
-				p.skill-block__name Photoshop + Figma + Zeplin + Avocode
-				progress.skill-block__progress(value="0" max="60")
-				.skill-block__progress-bg
-					.skill-block__progress-value
+			+skill-block-set("html5", "HTML5", "85")
+			+skill-block-set("css3", "CSS3", "80")
+			+skill-block-set("js", "JavaScript", "50")
+			+skill-block-set("jq", "JQuery", "50")
+			+skill-block-set("sass", "SASS (SCSS), PUG", "75")
+			+skill-block-set("gulp", "Gulp", "50")
+			+skill-block-set("bem", "BEM", "70")
+			+skill-block-set("adapt", "Adaptability + Cross-browser compatibility", "75")
+			+skill-block-set("git", "Git", "40")
+			+skill-block-set("wordpr", "PHP + Wordpress", "20")
+			+skill-block-set("ps", "Photoshop + Figma + Zeplin + Avocode", "70")
 
 		section.skill-resume
