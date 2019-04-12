@@ -15,7 +15,7 @@
 			margin-right: auto;
 
 			.logo-icon {
-				@include size (45px);
+				@include size (60px);
 				fill: $accent-color;
 			}
 		}
@@ -108,7 +108,7 @@
 		position: relative;
 		width: 100%;
 		&::after {
-			background-color: rgba($hover-dark, .5);
+			background-color: rgba($dark, .6);
 			bottom: 0;
 			content: "";
 			left: 0;

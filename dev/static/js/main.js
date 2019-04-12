@@ -53,7 +53,7 @@ $(document).ready(function () {
 		$(window).on("load",function(){
 			$(".js-anchor").mPageScroll2id({
 				scrollSpeed: 600,
-				offset: 70
+				offset: 80
 			});
 		});
 	};
