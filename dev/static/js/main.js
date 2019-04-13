@@ -114,7 +114,7 @@ $(document).ready(function () {
 
 	portfSlider();
 	setAnchors();
-	animProgressBar(50);
+	animProgressBar(70);
 	btnScrollTop(500, 600);
 	btnScrollDown(600);
 });
@@ -127,6 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		let btnWrap = document.querySelector('.header-top__sandwich'),
 				btn = document.querySelector('.sandwich-btn'),
 				nav = document.querySelector('.header-top__menu'),
+				itemMenu = document.querySelectorAll('.header-top__item'),
 				body = document.querySelector('body');
 		btnWrap.addEventListener('click', (event) => {
 			let target = event.target || event.target.closest('.sandwich-btn');
@@ -134,6 +135,9 @@ window.addEventListener('DOMContentLoaded', () => {
 				btnWrap.classList.toggle('sandWrap-open');
 				btn.classList.toggle('sand-open');
 				nav.classList.toggle('menu-open');
+				itemMenu.forEach((i, ind) => {
+					itemMenu[ind].classList.toggle('li-open');
+				});
 				// body.classList.toggle('magnific-popup-no-scroll');
 			}
 		});

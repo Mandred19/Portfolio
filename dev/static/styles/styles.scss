@@ -62,7 +62,7 @@ button {
   height: 100%;
 }
 
-.content { flex: 1 0 auto; }
+.content {flex: 1 0 auto; }
 
 .container {
 	align-items: center;
@@ -75,11 +75,11 @@ button {
 	}
 
 	&--header-main {
-		align-items: center;
+		align-items: flex-start;
 		flex-direction: column;
 		height: 100%;
 		position: relative;
-		width: 768px;
+		// width: 768px;
 	}
 
 	&--about {
@@ -112,9 +112,14 @@ button {
 		color: $white;
 		font-size: 5rem;
 	}
+
 	&--prof {
 		color: $white;
 		font-size: 3.5rem;
+	}
+
+	&--about {
+		color: $white;
 	}
 }
 

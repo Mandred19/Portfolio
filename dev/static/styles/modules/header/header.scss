@@ -1,5 +1,4 @@
 .header {
-	margin-bottom: 80px;
 
 	&-top {
 		align-items: center;
@@ -9,7 +8,7 @@
 		position: fixed;
 		top: 0.5rem;
 		width: 100%;
-		z-index: 2;
+		z-index: 999;
 
 		&__logo {
 			margin-right: auto;
@@ -32,13 +31,6 @@
 			max-width: 800px;
 			transition: all linear .4s;
 			width: 0;
-			z-index: 10;
-			@media screen and(max-width: $tablet-wide) {
-				width: 60vw;
-			}
-			// @media screen and(max-width: $tablet-small) {
-			// 	flex-direction: column;
-			// }
 		}
 
 		&__list {
@@ -50,38 +42,10 @@
 
 		&__item {
 			text-transform: uppercase;
-
-			&--lang {
-				align-items: center;
-				display: flex;
-				justify-content: space-between;
-				width: 85px;
-
-				.lang-item {
-					cursor: pointer;
-					@include size (25px);
-					fill: $white;
-					@media screen and(min-width: 1023.98px) {
-						&:hover {
-							color: $action-color;
-						}
-					}
-				}
-			}
+			display: none;
 		}
 
 		&__link {
-			transition: all linear .3s;
-			@media screen and(min-width: 1023.98px) {
-				&:hover {
-					color: $action-color;
-				}
-			}
-		}
-
-		&__lang {
-			cursor: pointer;
-			color: $white;
 			transition: all linear .3s;
 			@media screen and(min-width: 1023.98px) {
 				&:hover {
@@ -109,7 +73,7 @@
 		position: relative;
 		width: 100%;
 		&::after {
-			background-color: rgba($dark, .6);
+			background-color: rgba($dark, .4);
 			bottom: 0;
 			content: "";
 			left: 0;
@@ -125,13 +89,13 @@
 			z-index: 2;
 
 			&--one {
-				// top: 26%;
-				margin-left: -290px;
+				// top: 30%;
+				margin-left: 85px;
 				margin-top: auto;
 			}
 			&--two {
-				// top: 29%;
-				margin-left: -140px;
+				// top: 33%;
+				margin-left: 375px;
 			}
 			&--three {
 				// top: 30%;
@@ -154,12 +118,15 @@
 	}
 }
 
-
-.lang-active {
-	color: $accent-color;
-}
-
 .menu-open {
 	opacity: 1;
-	width: 50vw;
+	width: 60vw;
+	// @media screen and(max-width: $tablet-small) {
+	// 	flex-direction: column;
+	// }
+}
+
+.li-open {
+	transition-delay: 3s;
+	display: block;
 }
