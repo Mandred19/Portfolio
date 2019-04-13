@@ -4,6 +4,7 @@ $(window).on('load', () => {
   }, 0);
 });
 
+
 $(document).ready(function () {
 		svg4everybody({});
 
@@ -58,9 +59,10 @@ $(document).ready(function () {
 		});
 	};
 
+
 	const animProgressBar = (time) => {
 		let check = 1,
-				bar = document.querySelectorAll('.skill-block__progress'),
+				bar = $('.skill-block__progress'),
 				start = 0,
 				target = $('.skills'),
 				targetPos = target.offset().top,
@@ -70,7 +72,7 @@ $(document).ready(function () {
 		$(window).scroll( () => {
 			let winScrollTop = $(this).scrollTop();
 			if (winScrollTop > scrollToElem && check) {
-				bar.forEach((i, ind) => {
+				bar.each((ind) => {
 					const interval = setInterval(() => {
 						start > bar[ind].max ? clearInterval(interval) : bar[ind].value = start;
 						start++;
@@ -82,9 +84,39 @@ $(document).ready(function () {
 	};
 
 
+	const btnScrollTop = (scrollHeigth, animDuration) => {
+		let btnTop = $('.btn-scroll-top');
+
+		$(window).scroll( () => {
+			$(this).scrollTop() > scrollHeigth ?
+			btnTop.addClass('btn-scroll-top-active') :
+			btnTop.removeClass('btn-scroll-top-active');
+		});
+		btnTop.on('click', () => {
+			$('body, html').animate({
+				scrollTop: 0
+			}, animDuration);
+		});
+	};
+
+
+	const btnScrollDown = (animDuration) => {
+		let btnDown = $('.header-main__btn'),
+				screenHeight = $(window).height();
+
+		btnDown.on('click', () => {
+			$('body, html').animate({
+				scrollTop: screenHeight
+			}, animDuration);
+		});
+	};
+
+
 	portfSlider();
 	setAnchors();
 	animProgressBar(50);
+	btnScrollTop(500, 600);
+	btnScrollDown(600);
 });
 
 
@@ -131,36 +163,5 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 
-	const nextScreen = () => {
-		let btn = document.querySelector('.header-main__btn'),
-				screenHeight = document.querySelector('.about').clientHeight;
-		btn.addEventListener('click', () => {
-			scrollBy({
-				top: screenHeight,
-				behavior: 'smooth'
-			});
-		});
-	};
-
-	const btnScrollUp = () => {
-		let scrollHeigth = 500,
-				scrollTopDuration = 600,
-				buttonUp = $('.button__scroll_up');
-		$(window).scroll( () => {
-			$(this).scrollTop() > scrollHeigth ?
-			buttonUp.addClass('button__scroll_up-active') :
-			buttonUp.removeClass('button__scroll_up-active');
-		});
-		buttonUp.on('click', (event) => {
-			event.preventDefault();
-			$('body, html').animate( {
-				scrollTop: 0
-			}, scrollTopDuration );
-		});
-	};
-
-
 	sandwichBtn();
-	nextScreen();
-	btnScrollUp();
 });
