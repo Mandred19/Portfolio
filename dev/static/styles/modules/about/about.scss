@@ -6,7 +6,7 @@
 	padding-top: 80px;
 	position: relative;
 	&::after {
-		background-color: rgba($dark, .4);
+		background-color: rgba($dark, .55);
 		bottom: 0;
 		content: "";
 		left: 0;
@@ -22,6 +22,7 @@
 	display: flex;
 	flex: 0 1 700px;
 	flex-direction: column;
+	position: relative;
 	margin-right: 30px;
 	width: 60%;
 	z-index: 2;
@@ -38,7 +39,7 @@
 
 	&__text {
 		color: $white;
-		margin-bottom: 50px;
+		margin-bottom: 45px;
 		&:not(:last-child)::after {
 			background-color: $white;
 			content: "";
@@ -48,6 +49,11 @@
 			position: absolute;
 			transform: translateX(-50%);
 			width: 10%;
+		}
+
+		&--dark {
+			color: $base-text;
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -79,10 +85,11 @@
 
 .block-photo {
 	align-items: center;
+	border-radius: 5px;
 	box-shadow: 0px 3px 10px 1px rgba(33,33,33,0.3);
 	display: flex;
 	flex: 0 1 360px;
-	height: 360px;
+	height: 400px;
 	justify-content: center;
 	overflow: hidden;
 	width: 30%;

@@ -1,6 +1,6 @@
 .portfolio {
-	padding-bottom: 40px;
-	padding-top: 40px;
+	padding-bottom: 60px;
+	padding-top: 80px;
 }
 
 .slider {
@@ -56,6 +56,10 @@
 			overflow: hidden;
 			margin: 50px 0 auto 0;
 			text-align: center;
+
+			&--dark {
+				color: $base-text;
+			}
 		}
 	}
 }

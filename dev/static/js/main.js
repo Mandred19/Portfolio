@@ -53,8 +53,7 @@ $(document).ready(function () {
 	const setAnchors = () => {
 		$(window).on("load",function(){
 			$(".js-anchor").mPageScroll2id({
-				scrollSpeed: 600,
-				offset: 80
+				scrollSpeed: 600
 			});
 		});
 	};
@@ -162,6 +161,9 @@ window.addEventListener('DOMContentLoaded', () => {
 				btnWrap.classList.toggle('sandWrap-open');
 				btn.classList.toggle('sand-open');
 				nav.classList.toggle('menu-open');
+				itemMenu.forEach((i, ind) => {
+					itemMenu[ind].classList.toggle('li-open');
+				});
 				// body.classList.toggle('magnific-popup-no-scroll');
 			}
 		});
