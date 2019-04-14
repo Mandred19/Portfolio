@@ -15,17 +15,33 @@
 		top: 0;
 		z-index: 1;
 	}
+	@media screen and(max-width: $tablet-wide) {
+		background-position: left;
+	}
 }
 
 .block-history {
 	align-items: flex-start;
 	display: flex;
-	flex: 0 1 700px;
+	flex: 0.95;
 	flex-direction: column;
 	position: relative;
 	margin-right: 30px;
-	width: 60%;
 	z-index: 2;
+	@media screen and(max-width: $tablet-wide) {
+		flex: 0.7;
+	}
+	@media screen and(max-width: $tablet-large) {
+		flex: 0.6;
+		margin-right: 10px;
+	}
+	@media screen and(max-width: $tablet-large) {
+		flex: 0.7;
+	}
+	@media screen and(max-width: $tablet) {
+		flex: 1;
+		order: 2;
+	}
 
 	&__title {
 		margin-bottom: 30px;
@@ -39,7 +55,7 @@
 
 	&__text {
 		color: $white;
-		margin-bottom: 45px;
+		margin-bottom: 55px;
 		&:not(:last-child)::after {
 			background-color: $white;
 			content: "";
@@ -61,12 +77,11 @@
 .block-social {
 	align-items: center;
 	display: flex;
-	flex: 0 1 50%;
+	flex: 1;
 	justify-content: space-between;
 	margin-bottom: 30px;
-	width: 40%;
 	& > * {
-		&:not(:last-child) { margin-right: 10px; }
+		&:not(:last-child) { margin-right: 15px; }
 	}
 
 	.social-icon {
@@ -76,7 +91,7 @@
 		transition: all linear .3s;
 		@media screen and(min-width: 1023.98px) {
 			&:hover {
-				fill: $action-color;
+				fill: $white;
 				transform: scale(1.05);
 			}
 		}
@@ -86,19 +101,27 @@
 .block-photo {
 	align-items: center;
 	border-radius: 5px;
-	box-shadow: 0px 3px 10px 1px rgba(33,33,33,0.3);
 	display: flex;
-	flex: 0 1 360px;
-	height: 400px;
-	justify-content: center;
+	flex: 0.47;
+	justify-content: flex-end;
+	height: auto;
 	overflow: hidden;
-	width: 30%;
 	z-index: 2;
+	@media screen and(max-width: $tablet-large) {
+		flex: 0.3;
+	}
+	@media screen and(max-width: $tablet) {
+		order: 1;
+		margin-bottom: 20px;
+	}
 
 	&__img {
-		background-size: contain;
-		background-position: top;
+		background-size: cover;
+		background-position: center;
 		height: 480px;
 		width: auto;
+		@media screen and(max-width: $tablet-large) {
+			height: 340px;
+		}
 	}
 }

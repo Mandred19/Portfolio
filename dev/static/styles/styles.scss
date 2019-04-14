@@ -79,14 +79,14 @@ button {
 		flex-direction: column;
 		height: 100%;
 		position: relative;
-		// width: 768px;
 	}
 
 	&--about {
 		align-items: flex-start;
-		// @media screen and(max-width: $desktop) {
-		// 	flex-direction: column;
-		// }
+		justify-content: space-between;
+		@media screen and(max-width: $tablet) {
+			flex-direction: column;
+		}
 	}
 
 	&--portfolio {
@@ -98,6 +98,14 @@ button {
 	&--skill {
 		align-items: flex-start;
 		justify-content: space-between;
+		@media screen and(max-width: $tablet) {
+			flex-direction: column;
+			& > * {
+				margin: 30px 0;
+				&:first-child { margin-top: 0; }
+				&:last-child { margin-bottom: 0; }
+			}
+		}
 	}
 
 	&--footer {
