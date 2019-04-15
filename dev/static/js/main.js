@@ -68,17 +68,21 @@ $(document).ready(function () {
 				target = $('.skills'),
 				targetPos = target.offset().top,
 				winHeight = $(window).height(),
-				scrollToElem = targetPos - winHeight;
+				scrollToElem = targetPos - winHeight + 300;
 
 		$(window).scroll( () => {
 			let winScrollTop = $(this).scrollTop();
+
 			if (winScrollTop > scrollToElem && check) {
-				bar.each((ind) => {
-					const interval = setInterval(() => {
-						start > bar[ind].max ? clearInterval(interval) : bar[ind].value = start;
-						start++;
-					}, time);
-				});
+				setTimeout(() => {
+					bar.each((ind) => {
+						const interval = setInterval(() => {
+							start > bar[ind].max ? clearInterval(interval) :
+							bar[ind].value = start;
+							start++;
+						}, time);
+					});
+				}, 1000);
 				check = 0;
 			}
 		});
@@ -93,6 +97,7 @@ $(document).ready(function () {
 			btnTop.addClass('btn-scroll-top-active') :
 			btnTop.removeClass('btn-scroll-top-active');
 		});
+
 		btnTop.on('click', () => {
 			$('body, html').animate({
 				scrollTop: 0
@@ -130,8 +135,10 @@ window.addEventListener('DOMContentLoaded', () => {
 				nav = document.querySelector('.header-top__menu'),
 				itemMenu = document.querySelectorAll('.header-top__item'),
 				body = document.querySelector('body');
+
 		btnWrap.addEventListener('click', (event) => {
 			let target = event.target || event.target.closest('.sandwich-btn');
+
 			if (target) {
 				btnWrap.classList.toggle('sandWrap-open');
 				btn.classList.toggle('sand-open');
@@ -139,9 +146,13 @@ window.addEventListener('DOMContentLoaded', () => {
 				itemMenu.forEach((i, ind) => {
 					itemMenu[ind].classList.toggle('li-open');
 				});
-				// body.classList.toggle('magnific-popup-no-scroll');
+
+				if (window.innerWidth < 768) {
+					body.classList.toggle('popup-no-scroll');
+				}
 			}
 		});
+
 		// btnWrap.addEventListener('mouseover', (event) => {
 		// 	console.log(1);
 		// 	let target = event.target || event.target.closest('.sandwich-btn');
@@ -159,6 +170,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		nav.addEventListener('click', (event) => {
 			let target = event.target && event.target.closest('.header-top__item');
+
 			if (target) {
 				btnWrap.classList.toggle('sandWrap-open');
 				btn.classList.toggle('sand-open');
@@ -166,7 +178,10 @@ window.addEventListener('DOMContentLoaded', () => {
 				itemMenu.forEach((i, ind) => {
 					itemMenu[ind].classList.toggle('li-open');
 				});
-				// body.classList.toggle('magnific-popup-no-scroll');
+
+				if (window.innerWidth < 768) {
+					body.classList.toggle('popup-no-scroll');
+				}
 			}
 		});
 	};

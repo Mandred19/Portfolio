@@ -163,5 +163,8 @@ button {
 	letter-spacing: 0.1px;
 }
 
+.popup-no-scroll {
+	overflow: hidden !important;
+}
 //Модули
 @import "modules/modules";

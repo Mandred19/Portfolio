@@ -1,0 +1,44 @@
+$tit1-len: 9;
+$tit2-len: 7;
+$tit3-len: 8;
+$tit4-len: 9;
+$speed     : .6s;
+$easing    : linear;
+
+@mixin del-trans($num) {
+	span {
+		@for $i from 1 through $num {
+			&:nth-child(#{$i}) {
+				transition-delay: ($i / 10) + 0s;
+			}
+		}
+	}
+}
+
+.tit {
+	@media screen and(min-width: 1023.98px) {
+		&:hover {
+			span {
+				color: $accent-color;
+				transform: rotateX(-360deg);
+			}
+		}
+	}
+	span {
+		display: inline-block;
+		transition: transform $speed $easing, color $speed*2 $easing;
+	}
+}
+
+.tit1{
+	@include del-trans($tit1-len);
+}
+.tit2{
+	@include del-trans($tit2-len);
+}
+.tit3{
+	@include del-trans($tit3-len);
+}
+.tit4{
+	@include del-trans($tit4-len);
+}
