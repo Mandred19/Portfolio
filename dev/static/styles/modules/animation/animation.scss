@@ -1,76 +1,8 @@
-@keyframes header_menu {
-	0% {
-		opacity: 0;
-		width: 0%;
-	}
-	50% {
-		opacity: .5;
-		width: 50%;
-	}
-	100% {
-		opacity: 1;
-		width: 100%;
-	}
-}
-
-@keyframes header_menu_mob {
-	0% {
-		opacity: 0;
-		width: 0;
-	}
-	25% {
-		opacity: .25;
-		width: 25%;
-	}
-	50% {
-		opacity: .5;
-		width: 50%;
-	}
-	75% {
-		opacity: .75;
-		width: 75%;
-	}
-	100% {
-		bottom: 0;
-		left: 0;
-		opacity: 1;
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 100%;
-		z-index: 5;
-	}
-}
-
-@keyframes text_menu {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 @keyframes header_main_border {
 	0% {
 		border-width: 10px;
 		border-style: solid;
 		border-color: rgba($white, 0);
-	}
-	25% {
-		border-width: 10px;
-		border-style: solid;
-		border-color: rgba($white, .25);
-	}
-	50% {
-		border-width: 10px;
-		border-style: solid;
-		border-color: rgba($white, .5);
-	}
-	75% {
-		border-width: 10px;
-		border-style: solid;
-		border-color: rgba($white, .75);
 	}
 	100% {
 		border-width: 10px;
@@ -79,18 +11,69 @@
 	}
 }
 
-.menu-open {
-	animation: header_menu 1s linear 0s 1 normal forwards;
-	@media screen and(max-width: $tablet) {
-		animation: header_menu_mob 1.2s linear .3s 1 normal forwards;
+@keyframes header_menu {
+	0% {
+		opacity: 0;
+		width: 0%;
+	}
+	100% {
+		opacity: 1;
+		width: 100%;
 	}
 }
 
-.anim-bg-mob {
-	animation: header_menu_mob 1.2s linear .3s 1 reverse forwards;
+@keyframes text_menu {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes text_menu_mob {
+	0% {
+		font-size: 0rem;
+		opacity: 0;
+		margin-bottom: 0px;
+	}
+	100% {
+		font-size: 1.5rem;
+		opacity: 1;
+		margin-bottom: 20px;
+	}
+}
+
+@keyframes header_menu_mob {
+	0% {
+		height: 0vh;
+		left: 95%;
+		opacity: 0;
+		position: fixed;
+		top: 5%;
+		transform: translate(-95%, -5%);
+		width: 0vw;
+		z-index: 5;
+	}
+	100% {
+		height: 100vh;
+		left: 95%;
+		position: fixed;
+		opacity: 1;
+		top: 5%;
+		transform: translate(-95%, -5%);
+		width: 100vw;
+		z-index: 5;
+	}
+}
+
+.menu-open {
+	animation: header_menu 1s linear 0s 1 normal forwards;
+	@media screen and(max-width: $tablet) {
+		animation: header_menu_mob .7s linear 0s 1 normal forwards;
+	}
 }
 
 .li-open {
-	animation: text_menu 1s linear 0s 1 normal forwards;
 	display: block !important;
+	animation: text_menu 1s linear 0s 1 normal forwards;
+	@media screen and(max-width: $tablet) {
+		animation: text_menu_mob .1s linear 0s 1 normal forwards;
+	}
 }
