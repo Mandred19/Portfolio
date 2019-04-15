@@ -83,6 +83,11 @@
 	& > * {
 		&:not(:last-child) { margin-right: 15px; }
 	}
+	@media screen and(max-width: $phone-wide) {
+		& > * {
+			&:not(:last-child) { margin-right: 10px; }
+		}
+	}
 
 	.social-icon {
 		@include size (50px);

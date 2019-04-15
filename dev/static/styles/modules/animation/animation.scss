@@ -51,7 +51,34 @@
 	}
 }
 
-// animation: name duration timing-function delay iteration-count direction fill-mode;
+@keyframes header_main_border {
+	0% {
+		border-width: 10px;
+		border-style: solid;
+		border-color: rgba($white, 0);
+	}
+	25% {
+		border-width: 10px;
+		border-style: solid;
+		border-color: rgba($white, .25);
+	}
+	50% {
+		border-width: 10px;
+		border-style: solid;
+		border-color: rgba($white, .5);
+	}
+	75% {
+		border-width: 10px;
+		border-style: solid;
+		border-color: rgba($white, .75);
+	}
+	100% {
+		border-width: 10px;
+		border-style: solid;
+		border-color: rgba($white, 1);
+	}
+}
+
 .menu-open {
 	animation: header_menu 1s linear 0s 1 normal forwards;
 	@media screen and(max-width: $tablet) {

@@ -17,6 +17,9 @@
 	overflow: hidden;
 	position: relative;
 	width: 85%;
+	@media screen and(max-width: $phone-wide) {
+		width: 100%;
+	}
 }
 
 .skill-block__progress-value {

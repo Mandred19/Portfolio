@@ -100,20 +100,11 @@
 			position: relative;
 			margin-bottom: 20px;
 			z-index: 2;
-
-			&--one {
-				margin-left: 135px;
-				margin-top: auto;
+			&:nth-child(even) {
+				margin-left: auto;
 			}
-			&--two {
-				margin-left: 375px;
-			}
-			&--three {
-				margin-left: 135px;
-			}
-			&--four {
-				margin-left: 375px;
-				margin-bottom: auto;
+			&:last-child {
+				margin-bottom: 0;
 			}
 		}
 

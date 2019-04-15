@@ -63,6 +63,9 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		width: 100%;
+		@media screen and(max-width: $phone-wide) {
+			flex-direction: column;
+		}
 	}
 
 	&__descr {
@@ -81,9 +84,16 @@
 			@media screen and(max-width: $tablet-wide) {
 				margin-right: 20px;
 			}
+			@media screen and(max-width: $phone-wide) {
+				margin-right: 0;
+			}
 		}
 		@media screen and(max-width: $tablet-wide) {
 			margin-bottom: 20px;
+		}
+		@media screen and(max-width: $phone-wide) {
+			flex: 1 1 100%;
+			width: 100%;
 		}
 	}
 

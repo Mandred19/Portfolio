@@ -75,10 +75,24 @@ button {
 	}
 
 	&--header-main {
+		animation: header_main_border 2s linear 0s 1 normal forwards;
 		align-items: flex-start;
+		border-radius: 5px;
 		flex-direction: column;
-		height: 100%;
-		position: relative;
+		left: 50%;
+		position: absolute;
+		padding: 30px 110px;
+		max-height: 490px;
+		max-width: 740px;
+		transform: translate(-50%, -50%);
+    top: 50%;
+		z-index: 2;
+		@media screen and(max-width: $tablet-small) {
+			padding: 30px 60px;
+		}
+		@media screen and(max-width: $phone-wide) {
+			padding: 30px 20px;
+		}
 	}
 
 	&--about {
@@ -120,11 +134,23 @@ button {
 	&--name {
 		color: $white;
 		font-size: 5rem;
+		@media screen and(max-width: $phablet) {
+			font-size: 4rem
+		}
+		@media screen and(max-width: $phone) {
+			font-size: 3.5rem;
+		}
 	}
 
 	&--prof {
 		color: $white;
-		font-size: 3.5rem;
+		font-size: 4rem;
+		@media screen and(max-width: $phablet) {
+			font-size: 3rem
+		}
+		@media screen and(max-width: $phone) {
+			font-size: 2.5rem;
+		}
 	}
 
 	&--about {
