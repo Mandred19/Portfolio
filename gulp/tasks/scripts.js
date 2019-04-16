@@ -12,6 +12,7 @@ module.exports = function () {
 						'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 						'node_modules/page-scroll-to-id/js/minified/jquery.malihu.PageScroll2id.min.js',
 						'node_modules/revealator/fm.revealator.jquery.js',
+						'node_modules/jquery-nice-select/js/jquery.nice-select.min.js',
 						'node_modules/jquery-validation/dist/jquery.validate.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.ouput));
@@ -23,6 +24,7 @@ module.exports = function () {
 						'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 						'node_modules/page-scroll-to-id/js/minified/jquery.malihu.PageScroll2id.min.js',
 						'node_modules/revealator/fm.revealator.jquery.js',
+						'node_modules/jquery-nice-select/js/jquery.nice-select.min.js',
 						'node_modules/jquery-validation/dist/jquery.validate.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())

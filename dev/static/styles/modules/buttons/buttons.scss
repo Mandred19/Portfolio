@@ -41,6 +41,9 @@
 				background-color: $action-color;
 			}
 		}
+		@media screen and(max-width: $phone-wide) {
+			width: 100%;
+		}
 	}
 }
 

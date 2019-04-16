@@ -68,10 +68,12 @@ $(document).ready(function () {
 			fixedContentPos: false,
 			callbacks: {
 				beforeOpen: function () {
-					$('body').addClass('popup-no-scroll');
+					if ($(window).height() > 560) {
+						$('body').addClass('popup-no-scroll-m');
+					}
 				},
 				close: function () {
-					$('body').removeClass('popup-no-scroll');
+					$('body').removeClass('popup-no-scroll-m');
 				}
 			}
 		});
@@ -102,21 +104,26 @@ $(document).ready(function () {
 						email: 'Укажите верный формат'
 					}
 				},
-				// errorPlacement: function (error, element) {
-				// 	element.attr('placeholder', error[0].outerText);
-				// }
+				errorPlacement: function (error, element) {
+					element.attr('placeholder', error[0].outerText);
+				}
 			});
-			// $(this).on('submit', function() {
-			// 	if ($(this).valid()) {
-			// 		let wrap = $(this).closest('.hide-on-success');
-			// 		if (wrap) {
-			// 			$(wrap).siblings('.show-on-success').show();
-			// 			$(wrap).hide();
-			// 		}
-			// 	}
-			// 	return false;
-			// });
+			$(this).on('submit', function() {
+				if ($(this).valid()) {
+					let wrap = $(this).closest('.hide-on-success');
+					if (wrap) {
+						$(wrap).siblings('.show-on-success').show();
+						$(wrap).hide();
+					}
+				}
+				return false;
+			});
 		});
+	};
+
+
+	const customSelect = () => {
+		$('.cont-popup__select').niceSelect();
 	};
 
 
@@ -124,6 +131,7 @@ $(document).ready(function () {
 	setAnchors();
 	showPopup();
 	validateFormMain();
+	customSelect();
 });
 
 
@@ -162,7 +170,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 
-
+//!!!!!!!!!!!!!!!!!!!!!! height of rotate screen
 	const animProgressBar = (time) => {
 		let check = 1,
 				start = 0,
@@ -173,7 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			let targetPos = target.getBoundingClientRect(),
 					targetPosTop = targetPos.top,
 					targetPosBottom = targetPos.bottom;
-			if (targetPosTop >= 0 && targetPosBottom <= winHeight + 300 && check) {
+			if (targetPosTop >= 0 && targetPosBottom <= winHeight + 200 && check) {
 				setTimeout(() => {
 					bar.forEach((i, ind) => {
 						const interval = setInterval(() => {

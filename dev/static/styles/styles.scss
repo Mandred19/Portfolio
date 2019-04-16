@@ -140,6 +140,9 @@ button {
 		@media screen and(max-width: $phone) {
 			font-size: 3.5rem;
 		}
+		@media screen and(max-height: $phone-wide) {
+			font-size: 2.5rem;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		}
 	}
 
 	&--prof {
@@ -150,6 +153,9 @@ button {
 		}
 		@media screen and(max-width: $phone) {
 			font-size: 2.5rem;
+		}
+		@media screen and(max-height: $phone-wide) {
+			font-size: 2rem;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 	}
 
@@ -164,6 +170,10 @@ button {
 }
 
 .popup-no-scroll {
+	overflow: hidden !important;
+}
+
+.popup-no-scroll-m {
 	overflow: hidden !important;
 }
 //Модули

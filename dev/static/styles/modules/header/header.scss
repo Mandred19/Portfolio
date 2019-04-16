@@ -109,6 +109,12 @@
 			&:last-child {
 				margin-bottom: 0;
 			}
+			@media screen and(max-height: $phablet) {
+				margin-bottom: 5px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		&__btn {
