@@ -61,21 +61,60 @@ $(document).ready(function () {
 	};
 
 
+	portfSlider();
+	setAnchors();
+});
+
+
+window.addEventListener('DOMContentLoaded', () => {
+
+
+	const btnScrollTop = (scrollHeigth) => {
+		let btnTop = document.querySelector('.btn-scroll-top');
+
+		window.addEventListener('scroll', () => {
+			window.pageYOffset > scrollHeigth ?
+			btnTop.classList.add('btn-scroll-top-active') :
+			btnTop.classList.remove('btn-scroll-top-active');
+
+			btnTop.addEventListener('click', () => {
+				window.scroll({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
+			});
+		});
+	};
+
+
+	const btnScrollDown = () => {
+		let btnDown = document.querySelector('.header-main__btn'),
+				screenHeight = window.innerHeight;
+
+		btnDown.addEventListener('click', () => {
+			window.scroll({
+				top: screenHeight,
+				left: 0,
+				behavior: 'smooth'
+			});
+		});
+	};
+
+
 	const animProgressBar = (time) => {
 		let check = 1,
-				bar = $('.skill-block__progress'),
 				start = 0,
-				target = $('.skills'),
-				targetPos = target.offset().top,
-				winHeight = $(window).height(),
-				scrollToElem = targetPos - winHeight + 300;
-
-		$(window).scroll( () => {
-			let winScrollTop = $(this).scrollTop();
-
-			if (winScrollTop > scrollToElem && check) {
+				bar = document.querySelectorAll('.skill-block__progress'),
+				target = document.querySelector('.skills'),
+				winHeight = window.innerHeight;
+		window.addEventListener('scroll', () => {
+			let targetPos = target.getBoundingClientRect(),
+					targetPosTop = targetPos.top,
+					targetPosBottom = targetPos.bottom;
+			if (targetPosTop >= 0 && targetPosBottom <= winHeight + 300 && check) {
 				setTimeout(() => {
-					bar.each((ind) => {
+					bar.forEach((i, ind) => {
 						const interval = setInterval(() => {
 							start > bar[ind].max ? clearInterval(interval) :
 							bar[ind].value = start;
@@ -89,46 +128,6 @@ $(document).ready(function () {
 	};
 
 
-	const btnScrollTop = (scrollHeigth, animDuration) => {
-		let btnTop = $('.btn-scroll-top');
-
-		$(window).scroll( () => {
-			$(this).scrollTop() > scrollHeigth ?
-			btnTop.addClass('btn-scroll-top-active') :
-			btnTop.removeClass('btn-scroll-top-active');
-		});
-
-		btnTop.on('click', () => {
-			$('body, html').animate({
-				scrollTop: 0
-			}, animDuration);
-		});
-	};
-
-
-	const btnScrollDown = (animDuration) => {
-		let btnDown = $('.header-main__btn'),
-				screenHeight = $(window).height();
-
-		btnDown.on('click', () => {
-			$('body, html').animate({
-				scrollTop: screenHeight
-			}, animDuration);
-		});
-	};
-
-
-	portfSlider();
-	setAnchors();
-	animProgressBar(70);
-	btnScrollTop(500, 600);
-	btnScrollDown(600);
-});
-
-
-window.addEventListener('DOMContentLoaded', () => {
-
-
 	const sandwichBtn = () => {
 		let btnWrap = document.querySelector('.header-top__sandwich'),
 				btn = document.querySelector('.sandwich-btn'),
@@ -136,56 +135,36 @@ window.addEventListener('DOMContentLoaded', () => {
 				itemMenu = document.querySelectorAll('.header-top__item'),
 				body = document.querySelector('body');
 
+		const toggleClass = () => {
+			btnWrap.classList.toggle('sandWrap-open');
+			btn.classList.toggle('sand-open');
+			nav.classList.toggle('menu-open');
+			itemMenu.forEach((i, ind) => {
+				itemMenu[ind].classList.toggle('li-open');
+			});
+			if (window.innerWidth < 768) {
+				body.classList.toggle('popup-no-scroll');
+			}
+		};
+
 		btnWrap.addEventListener('click', (event) => {
 			let target = event.target || event.target.closest('.sandwich-btn');
-
 			if (target) {
-				btnWrap.classList.toggle('sandWrap-open');
-				btn.classList.toggle('sand-open');
-				nav.classList.toggle('menu-open');
-				itemMenu.forEach((i, ind) => {
-					itemMenu[ind].classList.toggle('li-open');
-				});
-
-				if (window.innerWidth < 768) {
-					body.classList.toggle('popup-no-scroll');
-				}
+				toggleClass();
 			}
 		});
 
-		// btnWrap.addEventListener('mouseover', (event) => {
-		// 	console.log(1);
-		// 	let target = event.target || event.target.closest('.sandwich-btn');
-		// 	if (target && ! btn.classList.contains('.sandWrap-open')) {
-		// 		btn.classList.toggle('sand-hover');
-		// 	}
-		// });
-		// btnWrap.addEventListener('mouseout', (event) => {
-		// 	console.log(1);
-		// 	let target = event.target || event.target.closest('.sandwich-btn');
-		// 	if (target && ! btn.classList.contains('.sandWrap-open')) {
-		// 		btn.classList.toggle('sand-hover');
-		// 	}
-		// });
-
 		nav.addEventListener('click', (event) => {
 			let target = event.target && event.target.closest('.header-top__item');
-
 			if (target) {
-				btnWrap.classList.toggle('sandWrap-open');
-				btn.classList.toggle('sand-open');
-				nav.classList.toggle('menu-open');
-				itemMenu.forEach((i, ind) => {
-					itemMenu[ind].classList.toggle('li-open');
-				});
-
-				if (window.innerWidth < 768) {
-					body.classList.toggle('popup-no-scroll');
-				}
+				toggleClass();
 			}
 		});
 	};
 
 
+	btnScrollTop(500);
+	btnScrollDown();
+	animProgressBar(70);
 	sandwichBtn();
 });
