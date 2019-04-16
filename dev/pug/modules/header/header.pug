@@ -1,6 +1,9 @@
-mixin menu-set(link, title)
+mixin menu-set(link, title, popup)
 	li.header-top__item
-		a.header-top__link.js-anchor(href=link)=title
+		if(popup)
+			a.header-top__link.js-popup(href=link)=title
+		else
+			a.header-top__link.js-anchor(href=link)=title
 
 - var tit1 = ["A", "l", "e", "x", "a", "n", "d", "e", "r"]
 - var tit2 = ["A", "l", "e", "x", "e", "e", "v"]
@@ -20,7 +23,7 @@ header.header#main
 					+menu-set("#about", "Обо мне")
 					+menu-set("#portfolio", "Портфолио")
 					+menu-set("#skill", "Навыки и услуги")
-					+menu-set("#cont", "Контакты")
+					+menu-set("#cont", "Контакты", true)
 			.header-top__sandwich
 				button.sandwich-btn
 
