@@ -64,6 +64,9 @@
 			overflow: hidden;
 			margin: 70px 0 auto 0;
 			text-align: center;
+			@media screen and(max-width: $phone) {
+				margin: 40px 0 auto 0;
+			}
 
 			&--dark {
 				color: $base-text;

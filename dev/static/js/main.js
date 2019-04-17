@@ -158,10 +158,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 	const btnScrollDown = () => {
-		let btnDown = document.querySelector('.header-main__btn'),
-				screenHeight = window.innerHeight;
+		let btnDown = document.querySelector('.header-main__btn');
 
 		btnDown.addEventListener('click', () => {
+			let screenHeight = window.innerHeight;
 			window.scroll({
 				top: screenHeight,
 				left: 0,
@@ -170,18 +170,18 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 
-//!!!!!!!!!!!!!!!!!!!!!! height of rotate screen
+
 	const animProgressBar = (time) => {
 		let check = 1,
 				start = 0,
 				bar = document.querySelectorAll('.skill-block__progress'),
-				target = document.querySelector('.skills'),
-				winHeight = window.innerHeight;
+				target = document.querySelector('.skills');
 		window.addEventListener('scroll', () => {
-			let targetPos = target.getBoundingClientRect(),
+			let winHeight = window.innerHeight,
+					targetPos = target.getBoundingClientRect(),
 					targetPosTop = targetPos.top,
 					targetPosBottom = targetPos.bottom;
-			if (targetPosTop >= 0 && targetPosBottom <= winHeight + 200 && check) {
+			if (targetPosTop < 81 && check || targetPosBottom < winHeight && check) {
 				setTimeout(() => {
 					bar.forEach((i, ind) => {
 						const interval = setInterval(() => {
