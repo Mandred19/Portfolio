@@ -1,0 +1,51 @@
+// Colors
+$white						: #FFFFFF;
+$dark							: #000000;
+$base-text				: #12112C;
+$light-text				: #E3F1F4;
+$link							: #ffffff;
+$accent-color			: #458898;
+$action-color			: #47599A;
+$bg								: #FFF8F1;
+$bg-gray					: #F6F6F6;
+$hover-dark				: #212121;
+$button						: #94774A;
+$error						: #FF4200;
+$primary-color		: #444ce0;
+$success-color		: #26de81;
+$danger-color 		: #fc5c65;
+$warning-color		: #fed330;
+
+$breakpoints: (
+	"phone-small"		: 375px,
+	"phone"       	: 375px,
+	"phone-wide"  	: 480px,
+	"tablet"      	: 768px,
+	"tablet-wide" 	: 1024px,
+	"desktop"     	: 1280px
+);
+$phone-small			: 320px; // x 560px
+$phone						: 375px; // x 640px
+$phone-wide				: 480px;
+$tablet						: 768px; // x 1024px
+$desktop-small		: 992px;
+$tablet-wide			: 1024px; // 768px
+$desktop					: 1280px;
+// Breakpoints -- height
+$phone-rotate				: 414px; // x 736px
+$phone-rotate-small	: 320px; // x 568px
+
+// Content-size
+$content-size			: 1170px;
+
+// Fonts
+$base-font-size			: 16px;
+$base-font-weight		: 400;
+$main-line-height		: 1.4;
+$main-font		: "Ubuntu-Regular", Arial, sans-serif;
+$bold-font		: "Ubuntu-Bold", "Arial Bold", sans-serif;
+$remote-font	: "Voces", Arial, sans-serif;
+
+// @media screen and(max-width: $desktop) {
+// 	padding: 0 10px;
+// }

@@ -1,0 +1,40 @@
+html {
+	font-size: $base-font-size;
+	font-family: $main-font;
+	font-weight: $base-font-weight;
+	height: 100%;
+	line-height: $main-line-height;
+	@media screen and (max-width: $tablet) { font-size: 15px; }
+	@media screen and (max-width: $phone-wide) { font-size: 14px; }
+}
+
+body {
+	color: $base-text;
+	font-family: $main-font;
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
+	height: 100%;
+	line-height: $main-line-height;
+	-webkit-tap-highlight-color: transparent;
+}
+
+section { position: relative; }
+
+a {
+	color: $link;
+	transition: all linear .3s;
+	@media screen and(min-width: 1023.98px) { &:hover { color: $action-color; } }
+}
+
+.main-wrapper { display: flex; flex-direction: column; height: 100%; }
+
+.content { flex: 1 0 auto; }
+
+.container {
+	align-items: center;
+	display: flex;
+  margin: 0 auto;
+	max-width: $content-size;
+	width: 100%;
+	@media screen and(max-width: $desktop) { padding: 0 10px; }
+}

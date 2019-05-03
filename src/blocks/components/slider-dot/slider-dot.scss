@@ -1,0 +1,29 @@
+.slick-dots {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	height: fit-content;
+	position: absolute;
+	bottom: -40px;
+	right: 50%;
+	transform: translateX(50%);
+	& > * {
+		&:not(:last-child) { margin-right: 10px; }
+	}
+	button {
+		@include size(15px);
+		border-radius: 50%;
+		border: 0;
+		background-color: rgba($gray, .5);
+		cursor: pointer;
+		display: block;
+		padding: 0;
+		text-indent: -9999px;
+		transition: all linear .3s;
+	}
+	.slick-active {
+		button {
+			background-color: $action-color;
+		}
+	}
+}

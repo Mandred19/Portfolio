@@ -1,0 +1,13 @@
+include ../utils/mixins
+
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		include ../includes/head
+	body(class=pageClass)
+		//- include ../blocks/modules/preloader/preloader
+		block content
+		noscript Ваш браузер не поддерживает скрипты или они отключены!
+		include ../includes/scripts
