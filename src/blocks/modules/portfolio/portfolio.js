@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'slick-carousel';
+import 'vue';
 
 (() => {
 	$('.slider').slick({
