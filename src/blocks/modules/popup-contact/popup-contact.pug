@@ -1,0 +1,29 @@
+.cont-popup.mfp-hide#cont
+
+	.hide-on-success
+		.cont-popup__header
+			h3.title.block-history__title.block-history__title--popup Напишите мне сообщение
+			+icon("close", "popup-close")
+		.cont-popup__body
+			form.cont-popup__form#cont-form(action="#" name="cont-form")
+				input.input.cont-popup__input(type="text" name="name" placeholder="Укажите ваше имя" required value="")
+				input.input.cont-popup__input(type="email" name="email" placeholder="Укажите ваш e-mail" required value="")
+				select.input.cont-popup__select(name="servise")
+					option.cont-popup__option(value="" disabled selected) Выберите услугу
+					option.cont-popup__option(value="") Одностраничный сайт
+					option.cont-popup__option(value="") Корпоративный сайт
+					option.cont-popup__option(value="") Интернет магазин
+					option.cont-popup__option(value="") Доработка функционала
+					option.cont-popup__option(value="") Доработка верстки
+					option.cont-popup__option(value="") Оптимизация сайта
+				textarea.input.input--textarea.cont-popup__area(name="message", cols="30", rows="10" placeholder="Задайте дополнительные вопросы или укажите ваши идеи")
+				input.btn.slider-block__btn.slider-block__btn--popup(type="submit" value="Отправить")
+		.cont-popup__footer
+
+	.show-on-success
+		.cont-popup__header.cont-popup__header--thank
+			h3.title.block-history__title.block-history__title--popup Спасибо за вашу заявку
+			+icon("close", "popup-close")
+		.cont-popup__body.cont-popup__body--thank
+			p.text.block-history__text.block-history__text--dark Я свяжусь с вами для детального рассмотрения вопроса
+		.cont-popup__footer

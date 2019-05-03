@@ -1,0 +1,23 @@
+mixin slider-set(link, photoSrc, photoAlt, title, btnName)
+	.slider-block
+		a(href=link target="blank")
+			img.slider-block__image(src=photoSrc, alt=photoAlt)
+			.slider-block__overlay
+				h4.slider-block__title=title
+				.btn.slider-block__btn=btnName
+
+
+section.portfolio#portfolio
+	.container.container--portfolio
+		h3.title.block-history__title Мое портфолио
+		section.slider
+			+slider-set("https://mandred19.github.io/RBNC/", "img/content/rnbc.jpg", "preview", "Российский центр деловых переговоров", "Показать")
+			+slider-set("https://mandred19.github.io/Yoga-tours/", "img/content/yoga.jpg", "preview", "Йога туры в Индию", "Показать")
+			+slider-set("https://mandred19.github.io/Pizza-at-home/", "img/content/pizza.jpg", "preview", "Пицца на дом", "Показать")
+			+slider-set("https://mandred19.github.io/Landing1/", "img/content/land.jpg", "preview", "Landing", "Показать")
+			+slider-set("https://mandred19.github.io/Money-keeper/", "img/content/budget.jpg", "preview", "Money keeper", "Показать")
+			+slider-set("https://mandred19.github.io/Mercury/", "img/content/merc.jpg", "preview", "Mercury", "Показать")
+
+		.slider-arrow
+			+icon("next", "slider-arrow__prev")
+			+icon("prev", "slider-arrow__next")

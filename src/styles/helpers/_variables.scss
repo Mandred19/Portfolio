@@ -17,20 +17,29 @@ $danger-color 		: #fc5c65;
 $warning-color		: #fed330;
 
 $breakpoints: (
-	"phone-small"		: 375px,
-	"phone"       	: 375px,
-	"phone-wide"  	: 480px,
-	"tablet"      	: 768px,
-	"tablet-wide" 	: 1024px,
-	"desktop"     	: 1280px
+  "phone"       	: 400px,
+  "phone-wide"  	: 480px,
+  "phablet"     	: 560px,
+  "tablet-small"	: 640px,
+  "tablet"      	: 768px,
+  "tablet-wide" 	: 1024px,
+  "desktop"     	: 1248px,
+  "desktop-wide"	: 1440px
 );
+// Breakpoints -- width
 $phone-small			: 320px; // x 560px
-$phone						: 375px; // x 640px
+$phone-middle			: 360px; // x 640px
+$phone						: 400px;
 $phone-wide				: 480px;
+$phablet					: 560px;
+$tablet-small			: 640px;
 $tablet						: 768px; // x 1024px
+$tablet-large			: 860px;
 $desktop-small		: 992px;
 $tablet-wide			: 1024px; // 768px
-$desktop					: 1280px;
+$desktop					: 1248px;
+$desktop-wide			: 1440px;
+$desktop-large		: 1600px;
 // Breakpoints -- height
 $phone-rotate				: 414px; // x 736px
 $phone-rotate-small	: 320px; // x 568px
@@ -41,7 +50,6 @@ $content-size			: 1170px;
 // Fonts
 $base-font-size			: 16px;
 $base-font-weight		: 400;
-$main-line-height		: 1.4;
 $main-font		: "Ubuntu-Regular", Arial, sans-serif;
 $bold-font		: "Ubuntu-Bold", "Arial Bold", sans-serif;
 $remote-font	: "Voces", Arial, sans-serif;

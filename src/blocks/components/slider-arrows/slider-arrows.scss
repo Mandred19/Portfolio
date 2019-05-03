@@ -1,0 +1,28 @@
+.slider-arrow__prev, .slider-arrow__next {
+	@include size (40px);
+	cursor: pointer;
+	fill: rgba($base-text, .3);
+	position: absolute;
+	transition: all linear .3s;
+	top: 12.5rem;
+	&:hover {
+		fill: rgba($base-text, 1);
+	}
+	@media screen and(max-width: $desktop) {
+		display: none;
+	}
+}
+
+.slider-arrow__prev {
+	left: -2rem;
+	@media screen and(max-width: $desktop) {
+		left: 1rem;
+	}
+}
+
+.slider-arrow__next {
+	right: -2rem;
+	@media screen and(max-width: $desktop) {
+		right: 1rem;
+	}
+}

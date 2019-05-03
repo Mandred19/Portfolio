@@ -1,25 +1,26 @@
 .slick-dots {
 	align-items: center;
+	bottom: -2rem;
 	display: flex;
 	justify-content: center;
 	height: fit-content;
 	position: absolute;
-	bottom: -40px;
-	right: 50%;
-	transform: translateX(50%);
+	left: 50%;
+	transform: translateX(-50%);
 	& > * {
 		&:not(:last-child) { margin-right: 10px; }
 	}
 	button {
-		@include size(15px);
-		border-radius: 50%;
+		border-radius: 5px;
 		border: 0;
-		background-color: rgba($gray, .5);
+		background-color: rgba($base-text, .4);
 		cursor: pointer;
 		display: block;
+		height: 10px;
 		padding: 0;
 		text-indent: -9999px;
 		transition: all linear .3s;
+		width: 30px;
 	}
 	.slick-active {
 		button {

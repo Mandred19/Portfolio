@@ -1,0 +1,96 @@
+@for $i from 0 through 100 {
+  .skills-block progress[value="#{$i}"] {
+    & ~ .skills-block__progress-bg .skills-block__progress-value { width: $i * 1% }
+  }
+}
+@keyframes bar_value {
+  0% { background-position: 0 0; }
+  100% { background-position: -40px 0; }
+}
+
+progress {
+	height: 0;
+	left: -777px;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+}
+
+.skills {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 20px;
+	width: 50%;
+	& > * {
+		margin: 10px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+	@media screen and(max-width: $tablet-large) {
+		margin-right: 10px;
+	}
+	@media screen and(max-width: $tablet) {
+		width: 100%;
+	}
+
+	&-block {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		&__icon {
+			@include size (40px);
+			fill: $accent-color;
+			margin-right: 10px;
+		}
+
+		&__desc {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		&__name {
+			margin-bottom: 5px;
+			font-family: $bold-font;
+		}
+
+		&__progress-bg {
+			background: transparent;
+			border: 1px solid rgba($accent-color, .5);
+			border-radius: 5px;
+			height: 5px;
+			overflow: hidden;
+			position: relative;
+			width: 85%;
+			@media screen and(max-width: $phone-wide) {
+				width: 100%;
+			}
+		}
+
+		&__progress-value {
+			background: $action-color;
+			height: 100%;
+			left: 0;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			transition: all 1s linear;
+			width: 0;
+			&::after {
+				animation: bar_value 0.3s linear infinite;
+				background-size: 40px 40px;
+				content: '';
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+	}
+}

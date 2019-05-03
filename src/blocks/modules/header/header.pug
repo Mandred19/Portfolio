@@ -1,0 +1,32 @@
+- var tit1 = ["A", "l", "e", "x", "a", "n", "d", "e", "r"]
+- var tit2 = ["A", "l", "e", "x", "e", "e", "v"]
+- var tit3 = ["F", "r", "o", "n", "t", "e", "n", "d"]
+- var tit4 = ["D", "e", "v", "e", "l", "o", "p", "e", "r"]
+
+
+header.header#main
+
+	.header-top
+		.container
+			.header-top__logo
+				+icon("logo", "logo-icon")
+			include ../top-menu/top-menu
+
+			include ../../components/sandwich/sandwich
+
+	section.header-main(style="background-image:url('img/general/bg11.jpg')")
+		.container.container--header-main
+			h2.title.tit.tit1.title--name.header-main__title.revealator-zoomin.revealator-once.revealator-delay4.revealator-duration10
+				each char in tit1
+					span=char
+			h2.title.tit.tit2.title--name.header-main__title.revealator-zoomin.revealator-once.revealator-delay6.revealator-duration10
+				each char in tit2
+					span=char
+			h2.title.tit.tit3.title--prof.header-main__title.revealator-zoomin.revealator-once.revealator-delay8.revealator-duration10
+				each char in tit3
+					span=char
+			h2.title.tit.tit4.title--prof.header-main__title.revealator-zoomin.revealator-once.revealator-delay10.revealator-duration10
+				each char in tit4
+					span=char
+		.header-main__btn
+			+icon("nextscreen", "btn-next-screen")

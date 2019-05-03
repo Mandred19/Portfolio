@@ -1,0 +1,22 @@
+mixin skills-block-set(nameIcon, nameTeh, maxVal)
+	.skills-block
+		+icon(nameIcon, "skills-block__icon")
+		.skills-block__desc
+			p.skills-block__name=nameTeh
+			progress.skills-block__progress(value="0" max=maxVal)
+			.skills-block__progress-bg
+				.skills-block__progress-value
+
+section.skills
+	h3.title.block-history__title Мои навыки
+	+skills-block-set("html5", "HTML5", "85")
+	+skills-block-set("css3", "CSS3", "80")
+	+skills-block-set("js", "JavaScript", "50")
+	+skills-block-set("jq", "JQuery", "50")
+	+skills-block-set("sass", "SASS (SCSS), PUG", "75")
+	+skills-block-set("gulp", "Gulp", "50")
+	+skills-block-set("bem", "BEM", "70")
+	+skills-block-set("adapt", "Адаптивность + кроссбраузерность", "75")
+	+skills-block-set("git", "Git", "40")
+	+skills-block-set("wordpr", "PHP + Wordpress", "20")
+	+skills-block-set("ps", "Photoshop + Figma + Zeplin + Avocode", "70")
