@@ -1,7 +1,7 @@
 {
 	"name": "gulp-webpack-template",
 	"description": "gulp-webpack-template",
-	"author": "",
+	"author": "Alexander Alexeev",
 	"license": "MIT",
 	"scripts": {
 		"dev": "gulp",

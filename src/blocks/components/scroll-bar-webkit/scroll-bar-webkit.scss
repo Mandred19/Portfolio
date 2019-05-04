@@ -16,12 +16,16 @@
 ::-webkit-scrollbar-thumb {
 	-webkit-border-radius: 5px;
 	border-radius: 2px;
-	background-color: $action-color;
+	background-color: $accent-color;
 	box-shadow: 0px 1px 1px $white inset;
 	background-image: url('');
 	background-position: center;
 	background-repeat: no-repeat;
-	transition: all linear .7s;
+	@media screen and(min-width: 1023.98px) {
+		&:hover {
+			background-color: $action-color;
+		}
+	}
 }
 
 ::-webkit-resizer{

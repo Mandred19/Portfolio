@@ -1,0 +1,99 @@
+.select {
+	background-color: $white;
+	border: 1px solid $accent-color;
+	border-radius: 5px;
+	color: $base-text;
+	position: relative;
+	width: 100%;
+	&:after, &:before {
+		border: 3px solid $accent-color;
+		content: "";
+		height: 10px;
+		position: absolute;
+		right: 10px;
+		top: 0.7rem;
+		transform: rotate(45deg);
+		transform-origin: 50% 50%;
+		transition: opacity .2s;
+		width: 10px;
+	}
+	&:before {
+		border-left: none;
+		border-top: none;
+	}
+	&:after {
+		border-right: none;
+		border-bottom: none;
+		opacity: 0;
+	}
+
+	.option {
+		padding: 10px;
+		cursor: pointer;
+		&:not(.active) {
+			display: none;
+			opacity: 0;
+		}
+	}
+
+	&.visible {
+		width: 100%;
+		&.select {
+			position: absolute;
+			top: 18px;
+			z-index: 1;
+		}
+		&:before, &:after {
+			border-color: $accent-color;
+		}
+		&:before {
+			opacity: 0;
+		}
+		&:after {
+			opacity: 1;
+		}
+		.option {
+			display: block;
+		}
+		&.placeholder {
+			border-bottom: 1px solid rgba($base-text, .7);
+		}
+	}
+
+	&.opacity {
+		.option {
+			opacity: 1;
+			@for $i from 0 to 10 {
+				&:nth-child(#{$i}) {
+					transition: opacity .5s .1s*$i;
+				}
+			}
+		}
+	}
+
+	&.withBG {
+		.option {
+			&:not(.placeholder):hover {
+				background-color: $action-color;
+				color: $white;
+			}
+			&:not(.placeholder).active {
+				background-color: $action-color;
+				color: $white;
+			}
+		}
+	}
+}
+
+.mini-hack {
+	opacity: 0;
+	transform: translateY(-50%);
+}
+
+.placeholder {
+	color: rgba($base-text, .7);
+}
+
+.mar-bot {
+	margin-top: 40px;
+}

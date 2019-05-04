@@ -289,7 +289,8 @@ export const spritesvg = () => gulp.src(paths.svg.src)
 	.pipe(gulp.dest(paths.svg.dist))
 	.pipe(debug({
 		'title': 'SVG'
-	}));
+	}))
+	.on('end', browsersync.reload);
 
 export const development = gulp.series(cleanFiles,
 	gulp.parallel(views, styles, scripts, images, webpimages, spritesvg, fonts, favs),
