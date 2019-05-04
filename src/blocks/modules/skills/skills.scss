@@ -27,10 +27,12 @@
 		display: flex;
 		align-items: center;
 		flex: 0 1 47%;
-		justify-content: center;
 		height: 110px;
+		justify-content: center;
+		opacity: 0;
 		padding: 0 10px 0 10px;
 		margin-bottom: 30px;
+		transition: all linear .3s;
 		&:nth-child(odd) {
 			margin-right: 30px;
 			@media screen and(max-width: $tablet-wide) {
@@ -53,4 +55,15 @@
 		font-size: 1.3rem;
 		text-align: center;
 	}
+}
+
+@keyframes show-service {
+	0% { opacity: 0; transform: scale(0)}
+	25%{ opacity: .25; transform: scale(.25)}
+	50%{ opacity: .5; transform: scale(.5)}
+	75%{ opacity: .75; transform: scale(.75)}
+	100%{ opacity: 1; transform: scale(1)}
+}
+.show-service {
+	animation: show-service 1.5s linear 1s 1 normal forwards;
 }

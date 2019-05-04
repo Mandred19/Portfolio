@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 	((time) => {
-		let check = 1,
-			start = 0,
+		let start = 0,
 			bar = document.querySelectorAll('.skills-block__progress'),
 			target = document.querySelector('.skills');
 		window.addEventListener('scroll', () => {
@@ -9,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				targetPos = target.getBoundingClientRect(),
 				targetPosTop = targetPos.top,
 				targetPosBottom = targetPos.bottom;
-			if (targetPosTop < 81 && check || targetPosBottom < winHeight && check) {
+			if (targetPosTop < 81 || targetPosBottom < winHeight) {
 				setTimeout(() => {
 					bar.forEach((i, ind) => {
 						const interval = setInterval(() => {
@@ -19,7 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
 						}, time);
 					});
 				}, 1000);
-				check = 0;
 			}
 		});
 	})(70);
