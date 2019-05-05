@@ -91,7 +91,7 @@ const webpackConfig = require('./webpack.config.js'),
 		},
 		svg: {
 			src: './src/img/svg/*.svg',
-			dist: './dist/img/svg'
+			dist: './dist/img/'
 		},
 		server_config: {
 			src: './src/.htaccess',
