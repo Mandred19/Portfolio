@@ -1,6 +1,6 @@
 @for $i from 0 through 100 {
-  .skills-block progress[value="#{$i}"] {
-    & ~ .skills-block__progress-bg .skills-block__progress-value { width: $i * 1% }
+  .skills-item progress[value="#{$i}"] {
+    & ~ .skills-item__progress-bg .skills-item__progress-value { width: $i * 1% }
   }
 }
 @keyframes bar_value {
@@ -23,11 +23,6 @@ progress {
 	justify-content: space-between;
 	margin-right: 20px;
 	width: 50%;
-	& > * {
-		margin: 10px 0;
-		&:first-child { margin-top: 0; }
-		&:last-child { margin-bottom: 0; }
-	}
 	@media screen and(max-width: $tablet-large) {
 		margin-right: 10px;
 	}
@@ -35,7 +30,16 @@ progress {
 		width: 100%;
 	}
 
-	&-block {
+	&-list {
+		width: 100%;
+		& > * {
+			margin: 10px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	&-item {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

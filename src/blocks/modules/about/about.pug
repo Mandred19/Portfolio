@@ -7,17 +7,22 @@ main.about#about(style="background-image:url('img/general/bg22.jpg')")
 			p.text.block-history__text.turn.hide Сильные стороны моих предыдущих должностей, которые несомненно пригодятся мне, как разработчику: умение работать в команде, взаимодействие с начальством, коллегами и клиентами, следование и достижение поставленной цели, трезвый расчет сроков и трудозатрат.
 			p.text.block-history__text.turn.hide Более полную информацию обо мне можно посмотреть на моих аккаунтах по ссылкам ниже.
 			span.text.block-history__toggle.expand Развернуть
-			.block-social
-				a.revealator-zoomin.revealator-once.revealator-delay2.revealator-duration10(href="https://github.com/Mandred19" target="blank" title="Посмотреть мой GitHub")
-					+icon("github", "social-icon")
-				a.revealator-zoomin.revealator-once.revealator-delay4.revealator-duration10(href="https://vk.com/alexander_alexeev1991" target="blank" title="Посмотреть мой VKontakte")
-					+icon("vk", "social-icon")
-				a.revealator-zoomin.revealator-once.revealator-delay6.revealator-duration10(href="https://www.linkedin.com/in/alexander-alexeev1991/" target="blank" title="Посмотреть мой LinkedIn")
-					+icon("linkedin", "social-icon")
-				a.revealator-zoomin.revealator-once.revealator-delay8.revealator-duration10(href="mailto:mandred1991@gmail.com" target="blank" title="Написать мне на e-mail")
-					+icon("email", "social-icon")
-				a.revealator-zoomin.revealator-once.revealator-delay10.revealator-duration10.resume-link(href="https://drive.google.com/open?id=1ELwAfv_B_-E07TQgtwtNMz-KBuk_TLrr" target="blank" title="Ознакомиться с резюме")
-					+icon("pdf", "social-icon")
+			ul.block-social
+				li.block-social__item
+					a(href="https://github.com/Mandred19" target="blank" title="Посмотреть мой GitHub")
+						+icon("github", "social-icon")
+				li.block-social__item
+					a(href="https://vk.com/alexander_alexeev1991" target="blank" title="Посмотреть мой VKontakte")
+						+icon("vk", "social-icon")
+				li.block-social__item
+					a(href="https://www.linkedin.com/in/alexander-alexeev1991/" target="blank" title="Посмотреть мой LinkedIn")
+						+icon("linkedin", "social-icon")
+				li.block-social__item
+					a(href="mailto:mandred1991@gmail.com" target="blank" title="Написать мне на e-mail")
+						+icon("email", "social-icon")
+				li.block-social__item
+					a.resume-link(href="https://drive.google.com/open?id=1ELwAfv_B_-E07TQgtwtNMz-KBuk_TLrr" target="blank" title="Ознакомиться с резюме")
+						+icon("pdf", "social-icon")
 
 		.block-photo
 			img.block-photo__img(src="img/content/my-photo.jpg", alt="my-photo")

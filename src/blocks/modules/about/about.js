@@ -11,4 +11,18 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	})();
+
+	(() => {
+		let target = document.querySelectorAll('.block-social__item');
+		target.forEach((i, ind) => {
+			window.addEventListener('scroll', () => {
+				let winHeight = window.innerHeight,
+					targetPos = target[ind].getBoundingClientRect(),
+					targetPosBottom = targetPos.bottom;
+				if (targetPosBottom < winHeight || targetPosBottom < 200) {
+					target[ind].classList.add('social-show');
+				}
+			});
+		});
+	})();
 });

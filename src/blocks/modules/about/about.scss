@@ -20,6 +20,11 @@
 	}
 }
 
+@keyframes show-social {
+	0% { opacity: 0; }
+	100% {opacity: 1; }
+}
+
 .block-history {
 	align-items: flex-start;
 	display: flex;
@@ -116,6 +121,10 @@
 		}
 	}
 
+	&__item {
+		opacity: 0;
+	}
+
 	.social-icon {
 		@include size (50px);
 		cursor: pointer;
@@ -161,5 +170,14 @@
 .hide {
 	@media screen and(max-width: $tablet) {
 		display: none;
+	}
+}
+
+.social-show {
+	@for $i from 0 to 10 {
+		&:nth-child(#{$i}) {
+			animation: show-social 1s linear .2s*$i 1 normal forwards;
+			// transition: opacity .5s .1s*$i;
+		}
 	}
 }

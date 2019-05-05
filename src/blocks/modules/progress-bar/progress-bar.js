@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 	((time) => {
 		let start = 0,
-			bar = document.querySelectorAll('.skills-block__progress'),
+			bar = document.querySelectorAll('.skills-item__progress'),
 			target = document.querySelector('.skills');
 		window.addEventListener('scroll', () => {
 			let winHeight = window.innerHeight,

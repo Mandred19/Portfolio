@@ -1,22 +1,23 @@
-mixin skills-block-set(nameIcon, nameTeh, maxVal)
-	.skills-block
-		+icon(nameIcon, "skills-block__icon")
-		.skills-block__desc
-			p.skills-block__name=nameTeh
-			progress.skills-block__progress(value="0" max=maxVal)
-			.skills-block__progress-bg
-				.skills-block__progress-value
+mixin skills-item-set(nameIcon, nameTeh, maxVal)
+	li.skills-item
+		+icon(nameIcon, "skills-item__icon")
+		.skills-item__desc
+			p.skills-item__name=nameTeh
+			progress.skills-item__progress(value="0" max=maxVal)
+			.skills-item__progress-bg
+				.skills-item__progress-value
 
 section.skills
-	h3.title.block-history__title Мои навыки
-	+skills-block-set("html5", "HTML5", "85")
-	+skills-block-set("css3", "CSS3", "80")
-	+skills-block-set("js", "JavaScript", "50")
-	+skills-block-set("jq", "JQuery", "50")
-	+skills-block-set("sass", "SASS (SCSS), PUG", "75")
-	+skills-block-set("gulp", "Gulp", "50")
-	+skills-block-set("bem", "BEM", "70")
-	+skills-block-set("adapt", "Адаптивность + кроссбраузерность", "75")
-	+skills-block-set("git", "Git", "40")
-	+skills-block-set("wordpr", "PHP + Wordpress", "20")
-	+skills-block-set("ps", "Photoshop + Figma + Zeplin + Avocode", "70")
+	h3.title.item-history__title Мои навыки
+	ul.skills-list
+		+skills-item-set("html5", "HTML5", "85")
+		+skills-item-set("css3", "CSS3", "80")
+		+skills-item-set("js", "JavaScript", "50")
+		+skills-item-set("jq", "JQuery", "50")
+		+skills-item-set("sass", "SASS (SCSS), PUG", "75")
+		+skills-item-set("gulp", "Gulp", "50")
+		+skills-item-set("bem", "BEM", "70")
+		+skills-item-set("adapt", "Адаптивность + кроссбраузерность", "75")
+		+skills-item-set("git", "Git", "40")
+		+skills-item-set("wordpr", "PHP + Wordpress", "20")
+		+skills-item-set("ps", "Photoshop + Figma + Zeplin + Avocode", "70")
