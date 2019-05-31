@@ -1,5 +1,5 @@
 mixin slider-set(link, photoSrc, photoAlt, title)
-	li.slider-block
+	.slider-block
 		a(href=link target="blank")
 			img.slider-block__image(src=photoSrc, alt=photoAlt)
 			.slider-block__overlay
@@ -10,7 +10,7 @@ mixin slider-set(link, photoSrc, photoAlt, title)
 section.portfolio#portfolio
 	.container.container--portfolio
 		h3.title.block-history__title Мое портфолио
-		ul.slider
+		.slider
 			+slider-set("https://mandred19.github.io/RBNC/", "img/content/rnbc.jpg", "preview", "Российский центр деловых переговоров")
 			+slider-set("https://mandred19.github.io/Yoga-tours/", "img/content/yoga.jpg", "preview", "Йога туры в Индию")
 			+slider-set("https://mandred19.github.io/Pizza-at-home/", "img/content/pizza.jpg", "preview", "Пицца на дом")
