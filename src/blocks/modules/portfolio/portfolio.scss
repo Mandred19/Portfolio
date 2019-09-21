@@ -12,6 +12,7 @@
 	&-block {
 		align-items: center;
 		border-radius: 5px;
+    border: 1px solid rgba($accent-color, .1);
 		cursor: pointer;
 		display: flex !important;
 		flex-direction: column;
