@@ -1,5 +1,5 @@
 mixin slider-set(link, photoSrc, photoAlt, title)
-	li.slider-block
+	.slider-block
 		a(href=link target="blank")
 			img.slider-block__image(src=photoSrc, alt=photoAlt)
 			.slider-block__overlay
@@ -10,13 +10,17 @@ mixin slider-set(link, photoSrc, photoAlt, title)
 section.portfolio#portfolio
 	.container.container--portfolio
 		h3.title.block-history__title Мое портфолио
-		ul.slider
-			+slider-set("https://mandred19.github.io/RBNC/", "img/content/rnbc.jpg", "preview", "Российский центр деловых переговоров")
-			+slider-set("https://mandred19.github.io/Yoga-tours/", "img/content/yoga.jpg", "preview", "Йога туры в Индию")
-			+slider-set("https://mandred19.github.io/Pizza-at-home/", "img/content/pizza.jpg", "preview", "Пицца на дом")
-			+slider-set("https://mandred19.github.io/Landing1/", "img/content/land.jpg", "preview", "Landing")
-			+slider-set("https://mandred19.github.io/Money-keeper/", "img/content/budget.jpg", "preview", "Money keeper")
-			+slider-set("https://mandred19.github.io/Mercury/", "img/content/merc.jpg", "preview", "Mercury")
+		.slider
+			+slider-set("https://mandred19.github.io/rbnc/", "img/content/rnbc.jpg", "preview", "Российский центр деловых переговоров")
+			+slider-set("https://mandred19.github.io/photo-app-learning-project/", "img/content/flickr-app.jpg", "preview", "Instaflickr Vue")
+			+slider-set("https://mandred19.github.io/yoga-tours/", "img/content/yoga.jpg", "preview", "Йога туры в Индию")
+			+slider-set("https://mandred19.github.io/pizza-at-house/", "img/content/pizza.jpg", "preview", "Пицца на дом")
+			+slider-set("https://mandred19.github.io/quotes-learning-project/", "img/content/quotes.jpg", "preview", "Quotes Vue")
+			+slider-set("https://mandred19.github.io/money-keeper-learning-project/", "img/content/money-keeper.jpg", "preview", "Money keeper Vue")
+			+slider-set("https://mandred19.github.io/learning-landing/", "img/content/land.jpg", "preview", "Landing")
+			+slider-set("https://mandred19.github.io/image-filter-on-canvas/", "img/content/canvas-app.jpg", "preview", "Image filter")
+			+slider-set("https://mandred19.github.io/money-keeper/", "img/content/budget.jpg", "preview", "Money keeper")
+			+slider-set("https://mandred19.github.io/math-trainer-learning-project/", "img/content/math-trainer.jpg", "preview", "Math trainer Vue")
 
 		.slider-arrow
 			+icon("next", "slider-arrow__prev")
